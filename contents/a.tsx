@@ -1,17 +1,18 @@
-import type { PlasmoContentScript, PlasmoGetInlineAnchor } from "plasmo"
-
-export const config: PlasmoContentScript = {
-  matches: ["https://www.plasmo.com/*"]
-}
-
-export const getInlineAnchor: PlasmoGetInlineAnchor = () =>
-  document.querySelector("#supercharge > h2 > span")
-
-// Use this to optimize unmount lookups
-export const getShadowHostId = () => "plasmo-inline-example-unique-id"
-
 const PlasmoInline = () => {
-  return <button>Custom button</button>
+  const onClick = () => {
+    const styele = document.createElement("style")
+    document.body.appendChild(styele)
+    styele.sheet.insertRule(
+      "body * { outline: 1px solid red; }",
+      styele.sheet.cssRules.length
+    )
+  }
+
+  return (
+    <button style={{ position: "fixed" }} onClick={onClick}>
+      dbg
+    </button>
+  )
 }
 
 export default PlasmoInline

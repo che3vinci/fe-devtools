@@ -12,7 +12,7 @@ function IndexPopup() {
         // background:'black'
       }}>
       <h2>
-        Welcome to your1888{" "}
+        Welcome to your18828{" "}
         <a href="https://www.plasmo.com" target="_blank">
           Plasmo
         </a>{" "}
