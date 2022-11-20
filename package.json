@@ -9,6 +9,12 @@
     "build": "plasmo build"
   },
   "dependencies": {
+    "@c3/dom": "^1.1.65",
+    "@c3/hooks": "1.1.110",
+    "@c3/react": "^1.0.10",
+    "@unstyled-ui/atomic": "^1.1.50",
+    "@unstyled-ui/ct-switcher": "^1.0.27",
+    "@unstyled-ui/layout": "^1.1.51",
     "plasmo": "0.55.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
