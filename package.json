@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@c3/react": "^1.0.12",
+    "@c3/utils": "^1.2.18",
     "@pnpm/filter-workspace-packages": "^6.0.13",
     "@scriptbot/cli": "^1.0.153",
     "@unstyled-ui/atomic": "^1.1.51",
@@ -34,8 +35,16 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
     "@vitejs/plugin-react": "^2.2.0",
     "babel-loader": "^8.3.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.4"
   }

@@ -1,11 +1,11 @@
-import { useMouseMove } from "@c3/react";
-import { Col, Grid, List, Row } from "@unstyled-ui/layout";
-import React, { useRef, useState } from "react";
-import {fixed} from '@unstyled-ui/css'
-import { colorscheme } from "./common/css";
+import { useMouseMove } from '@c3/react';
+import { Col, Grid, List, Row } from '@unstyled-ui/layout';
+import React, { useRef, useState } from 'react';
+import {fixed} from '@unstyled-ui/css';
+import { colorscheme } from './common/css';
 
 const Inspect: React.FC = (props) => {
-  const { active, ...restProps } = props;
+  const { ...restProps } = props;
   const slowRef = useRef<HTMLElement | null>(null);
   const [computedStyle, setComputedStyle] = useState({} as CSSStyleDeclaration);
   const [mousePos, setMousePos] = useState({} as { x: number; y: number });
@@ -15,19 +15,16 @@ const Inspect: React.FC = (props) => {
       e.clientX,
       e.clientY
     )! as HTMLElement;
-    element.style.outline = "1px solid red ";
+    element.style.outline = '1px solid red ';
     const computedStyle = window.getComputedStyle(element!);
     setComputedStyle(computedStyle);
     setMousePos({ x: e.clientX, y: e.clientY });
     if (slowRef.current && slowRef.current !== element) {
-      slowRef.current.style.outline = "none";
+      slowRef.current.style.outline = 'none';
     }
     slowRef.current = element as HTMLElement;
   });
-  // console.log("inspect", active, restProps)
-  if (!active) {
-    return null;
-  }
+
   return (
     <Col
       {...restProps}
@@ -41,7 +38,7 @@ const Inspect: React.FC = (props) => {
         w:'auto',
       }}>
       <Row>
-        <span>width:</span>        <span>{computedStyle.width}</span>
+        <span>width:</span>    <span>{computedStyle.width}</span>
       </Row>
       <Row>
         <span>height:</span>
