@@ -1,9 +1,9 @@
 import { useEventListener, useMount } from "@c3/react";
 import { Box } from "@unstyled-ui/layout";
 import React, { useState } from "react";
-import { Item } from "./App";
+import { Item } from "../../App";
 import {fixed} from '@unstyled-ui/css'
-import { colorscheme } from "./common/css";
+import { colorscheme } from "../../common/css";
 
 export type Info = {
   innerWidth: number | string
@@ -14,7 +14,7 @@ const defaultInfo: Info = {
   innerHeight: 0
 };
 
-const ViewPort: React.FC<Item> = (props) => {
+const ViewPortView: React.FC<Item> = (props) => {
   const { active, ...restProps } = props;
   const [info, setInfo] = useState<Info>(defaultInfo);
   useEventListener(window, "resize", () => {
@@ -42,4 +42,4 @@ const ViewPort: React.FC<Item> = (props) => {
   );
 };
 
-export default ViewPort;
+export default ViewPortView;

@@ -1,10 +1,11 @@
 import { useMouseMove } from '@c3/react';
 import { Col, Grid, List, Row } from '@unstyled-ui/layout';
 import React, { useRef, useState } from 'react';
-import {fixed} from '@unstyled-ui/css';
-import { colorscheme } from './common/css';
+import { fixed } from '@unstyled-ui/css';
+import { colorscheme } from '../../common/css';
+import { Item } from '../../App';
 
-const Inspect: React.FC = (props) => {
+const InspectView: React.FC<Item> = props => {
   const { ...restProps } = props;
   const slowRef = useRef<HTMLElement | null>(null);
   const [computedStyle, setComputedStyle] = useState({} as CSSStyleDeclaration);
@@ -31,24 +32,26 @@ const Inspect: React.FC = (props) => {
       css={{
         ...fixed({
           top: mousePos.y,
-          left: mousePos.x + 20
+          left: mousePos.x + 20,
         }),
         ...colorscheme,
         fontSize: 14,
-        w:'auto',
-      }}>
+        w: 'auto',
+      }}
+    >
       <Row>
-        <span>width:</span>    <span>{computedStyle.width}</span>
+        <span>width:</span> <span>{computedStyle.width}</span>
       </Row>
       <Row>
         <span>height:</span>
         <span>{computedStyle.height}</span>
       </Row>
       <Row>
-        <span>color:</span><span>{computedStyle.color}</span>
+        <span>color:</span>
+        <span>{computedStyle.color}</span>
       </Row>
     </Col>
   );
 };
 
-export default Inspect;
+export default InspectView;

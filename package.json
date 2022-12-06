@@ -8,11 +8,14 @@
     "build": " vite build",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
+    "@c3/dom": "^1.2.1",
     "@c3/react": "^1.0.12",
     "@c3/utils": "^1.2.18",
+    "@playwright/experimental-ct-react": "^1.28.1",
     "@pnpm/filter-workspace-packages": "^6.0.13",
     "@scriptbot/cli": "^1.0.153",
     "@unstyled-ui/atomic": "^1.1.51",

@@ -109,7 +109,7 @@ export const getContainingBlock = (
   }
 };
 
-const is3DElement = (el: HTMLElement): boolean => {
+export const is3DElement = (el: HTMLElement): boolean => {
   const style = window.getComputedStyle(el);
   return (
     style.transform !== 'none' ||

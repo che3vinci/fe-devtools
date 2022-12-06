@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import App from './App';
-import './index.css';
-const setup = () => {
-  const el = document.createElement('div');
-  el.setAttribute('id', 'rooty');
-  document.body.append(el);
+import { devtoolId } from './common/constants';
 
-  ReactDOM.createRoot(document.getElementById('rooty') as HTMLElement).render(
+import './index.css';
+
+  let root = document.getElementById(devtoolId);
+  if (!root) {
+    const el = document.createElement('div');
+    el.setAttribute('id', devtoolId);
+    el.setAttribute('style', 'position:relative;z-index:100');
+    document.body.append(el);
+    root = el;
+  }
+
+  ReactDOM.createRoot(root).render(
     <React.StrictMode>
       <App />
+      {/* <div>hello</div> */}
     </React.StrictMode>
   );
-};
-setup();

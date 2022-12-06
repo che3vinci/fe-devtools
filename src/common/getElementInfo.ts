@@ -1,4 +1,3 @@
-import { assert } from '@c3/utils';
 
 export const getElementInfo = (el: HTMLElement | Window) => {
   if (el instanceof Window) {
